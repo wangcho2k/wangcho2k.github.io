@@ -31,9 +31,11 @@ github_username:  wangcho2k
 domain: docs.ykstyle.info
 
 # Build settings
-theme: minimal-mistakes-jekyll
 plugins:
   - jekyll-feed
+  - jekyll-remote-theme
+theme: minimal-mistakes-jekyll
+remote-theme: mmistakes/minimal-mistakes
   
 include: ["_pages"]
 
