@@ -33,7 +33,7 @@ domain: docs.ykstyle.info
 # Build settings
 plugins:
   - jekyll-feed
-  - jekyll-remote-theme
+  - jekyll-include-cache
 remote_theme: "mmistakes/minimal-mistakes@4.24.0"
   
 include: ["_pages"]
