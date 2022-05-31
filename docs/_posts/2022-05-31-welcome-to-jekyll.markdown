@@ -1,16 +1,4 @@
 ---
-defaults:
-  # _posts
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: single
-      author_profile: true
-      read_time: true
-      comments: true
-      share: true
-      related: true
 title:  "Welcome to Jekyll!"
 date:   2022-05-31 11:19:40 +0900
 categories: jekyll update
