@@ -28,7 +28,7 @@ baseurl: "/docs" # the subpath of your site, e.g. /blog
 url: "https://wangcho2k.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: ""
 github_username:  wangcho2k
-domain: wangcho2k.github.io
+domain: docs.ykstyle.info
 
 # Build settings
 theme: minima
