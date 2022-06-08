@@ -28,7 +28,7 @@ def parse_namuwiki_json(limit = -1, debug=False):
         print(prefix, event, value)
 
       if (prefix, event) in capture_values:
-        doc[prefix[5:]] = value
+        doc[prefix.replace("item.", "")] = value
       if (prefix, event, value) == ("item", "end_map", None):
         yield doc
         doc = {}
@@ -50,7 +50,10 @@ def parse_namuwiki_json(limit = -1, debug=False):
 
 ## 필터링
 
-필터링 부분은 위 예제를 그대로 사용했는데, wiki 문법으로 된 데이터의 텍스트만을 끄집어내는 것이라 할 수 있겠습니다.
+필터링 부분은 위 참조글에 있는 `clean_text()` 예제를 그대로 사용했는데, wiki 문법으로 된 데이터의 텍스트만을 끄집어내는 것이라 할 수 있겠습니다.
+
+> **_업데이트:_** 2022년 6월 현재 [namu-wiki-extractor](https://github.com/jonghwanhyeon/namu-wiki-extractor) 의 `extract_text()` 에서 이미 필요한 필터링을 모두 실시합니다.    
+결과적으로 참조글 코드에 있는 처리가 불필요하며 오히려 미주/각주 주위의 텍스트가 전부 사라지는 등의 오류가 나타날 수 있으니 `clean_text()` 부분은 따로 구현하지 않고 바로 `extract_text()` 로 넘기시길 권합니다.
 
 ## jsonl 로 변환하기
 
@@ -59,10 +62,8 @@ parser 를 통해 얻어진 JSON 객체를 한 줄씩 저장하면 됩니다 �
 {% highlight python %}
 with open(OUT_FILE, "w") as out:
   for i, doc in enumerate(parse_namuwiki_json()):
-    text = doc['text']
-    text = clean_text(text)
+    doc['text'] = extract_text(doc['text'])
 
-    doc['text'] = text
     out.write(json.dumps(doc))
     out.write("\n")
 
