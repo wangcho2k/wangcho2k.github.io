@@ -1,7 +1,7 @@
 ---
 title:  "Automatic Mixed Precision Training"
 date:   2022-06-22 14:17:40 +0900
-categories: deep learning, mixed precision, nvidia, apex, pytorch
+categories: deep-learning
 ---
 
 ## Mixed Precision 이란?

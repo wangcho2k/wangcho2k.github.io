@@ -1,7 +1,7 @@
 ---
 title:  "macOS M1에 Jekyll 개발환경 구축하기"
 date:   2022-05-31 22:47:40 +0900
-categories: ruby
+categories: tool
 ---
 
 ## 1. Homebrew 설치하기

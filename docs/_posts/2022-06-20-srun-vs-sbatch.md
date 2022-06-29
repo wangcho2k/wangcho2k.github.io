@@ -1,7 +1,7 @@
 ---
 title:  "srun vs sbatch"
 date:   2022-06-20 14:17:40 +0900
-categories: slurm
+categories: infra
 ---
 
 ## 공통점
